@@ -2,7 +2,7 @@ import { Page, expect, Locator } from '@playwright/test';
 
 export class HomePage {
     private readonly page: Page;
-    
+
     // Locators
     private readonly lnkMyAccount: Locator;
     private readonly lnkRegister: Locator;
@@ -12,7 +12,7 @@ export class HomePage {
 
     constructor(page: Page) {
         this.page = page;
-        
+
         // Initialize locators
         this.lnkMyAccount = page.locator('span:has-text("My Account")');
         this.lnkRegister = page.locator('a:has-text("Register")');
@@ -22,17 +22,16 @@ export class HomePage {
     }
 
     // Check if HomePage exists
-    async isHomePageExists(){
-        let title:string = await this.page.title();
-        if(title)
-        {
+    async isHomePageExists() {
+        let title: string = await this.page.title();
+        if (title) {
             return true;
         }
         return false;
     }
 
     // Click "My Account" link
-    async clickMyAccount(){
+    async clickMyAccount() {
         try {
             await this.lnkMyAccount.click();
         } catch (error) {
@@ -42,7 +41,7 @@ export class HomePage {
     }
 
     // Click "Register" link
-    async clickRegister(){
+    async clickRegister() {
         try {
             await this.lnkRegister.click();
         } catch (error) {
@@ -52,7 +51,7 @@ export class HomePage {
     }
 
     // Click "Login" link
-    async clickLogin(){
+    async clickLogin() {
         try {
             await this.linkLogin.click();
         } catch (error) {
@@ -62,7 +61,7 @@ export class HomePage {
     }
 
     // Enter product name in the search box
-    async enterProductName(pName: string){
+    async enterProductName(pName: string) {
         try {
             await this.txtSearchbox.fill(pName);
         } catch (error) {
@@ -72,7 +71,7 @@ export class HomePage {
     }
 
     // Click the search button
-    async clickSearch(){
+    async clickSearch() {
         try {
             await this.btnSearch.click();
         } catch (error) {

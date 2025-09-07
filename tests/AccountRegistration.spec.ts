@@ -12,7 +12,7 @@
  */
 
 import { test, expect } from '@playwright/test';
-import { HomePage } from '../Pages/HomePage';
+import { HomePage } from '../pages/HomePage';
 import { RegistrationPage } from '../Pages/RegistrationPage';
 import { RandomDataUtil } from '../utils/randomDataGenerator';
 import { TestConfig } from '../test.config';
